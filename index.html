@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm Sorry 💐</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(to bottom, #e3fcec, #fdf6f0);
+      animation: backgroundFade 10s infinite alternate;
+    }
+    @keyframes backgroundFade {
+      0% { background: linear-gradient(to bottom, #e3fcec, #fdf6f0); }
+      100% { background: linear-gradient(to bottom, #fdf6f0, #e3fcec); }
+    }
+    .container {
+      text-align: center;
+      padding: 3rem 1rem;
+      animation: fadeIn 2s ease-out;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #ff6b81;
+      margin-bottom: 1rem;
+      animation: popIn 1.5s ease forwards;
+    }
+    p {
+      font-size: 1.3rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .flowers {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      z-index: -1;
+    }
+    .flower {
+      width: 60px;
+      height: 60px;
+      background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
+      animation: floatFlower 6s ease-in-out infinite;
+    }
+    @keyframes floatFlower {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    .button {
+      background: #ffb6b9;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+    .button:hover {
+      transform: scale(1.05);
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff8f0;
+      padding: 2rem;
+      border: 2px solid #ffb6b9;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+      animation: fadeIn 0.5s ease;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -2;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: rotate(-3deg) scale(1.1);
+    }
+    .cute-lines {
+      font-size: 1.1rem;
+      color: #e17055;
+      margin-top: 2rem;
+    }
+    .teddy {
+      font-size: 4rem;
+      margin-top: 1rem;
+      animation: popIn 1s ease infinite alternate;
+    }
+    .grid-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .grid-buttons button {
+      background-color: #ffe0e6;
+      border: none;
+      border-radius: 15px;
+      padding: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .grid-buttons button:hover {
+      background-color: #ffcbd1;
+    }
+    .message-box {
+      display: none;
+      margin-top: 1rem;
+      background-color: #fff0f5;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+      .button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+      .cute-lines {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I'm Really Sorry 😔</h1>
+    <p>
+      I know I hurt you and I feel so bad about it. You mean the world to me and I can't stand the thought of you being upset.
+      I want to make it right. Please forgive me. 🌸
+    </p>
+    <button class="button" onclick="showPopup()">Click for a surprise 💌</button>
+    <div class="teddy">🧸</div>
+    <div class="cute-lines">
+      You're the peanut butter to my jelly 🥪<br>
+      You're the sparkle in my soda 🥤<br>
+      You're the snuggle to my teddy 🧸<br>
+      And I miss you more than words can say 💌
+    </div>
+    <div class="grid-buttons">
+      <button onclick="showMessage('love')">Why I Love You 💖</button>
+      <button onclick="showMessage('funny')">My Favourite 😂</button>
+      <button onclick="showMessage('miss')">What I Miss Most 😢</button>
+      <button onclick="showMessage('apology')">My Apology 🙏</button>
+    </div>
+    <div class="message-box" id="love">You always make me feel special, loved, and cared for. Your smile brightens my darkest days. 💗</div>
+    <div class="message-box" id="funny">Seeing your eyes, your smile, and the way you sulk like a child. 😄</div>
+    <div class="message-box" id="miss">I miss your hugs, your laugh, and the way your eyes shine when you're happy. 💔</div>
+    <div class="message-box" id="apology">I’m sorry for everything. I miss you and want to make things right. I will do better every single day. ❤️</div>
+  </div>
+  <div class="flowers">
+    <div class="flower" style="animation-delay: 0s;"></div>
+    <div class="flower" style="animation-delay: 2s;"></div>
+    <div class="flower" style="animation-delay: 4s;"></div>
+  </div>
+  <div class="hearts" id="hearts"></div>
+  <div class="popup" id="popup">
+    <button onclick="closePopup()" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:1.5rem; cursor:pointer;">×</button>
+    <h2>💖 You are my sunshine, Khushiii 💖</h2>
+    <p>Even on the cloudiest days, you light up my world. I promise to be better and love you more each day. 🌷</p>
+    <div class="love-letter" style="background: #fff; border:none; box-shadow:none; padding: 1rem; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">💌 My Love Letter to You</h2>
+      <p style="font-size:1rem; color:#444;">
+        My dearest Betaa...,<br><br>
+        I know words can't fully express how sorry I am, but please know that every part of me aches for the chance to hold you again, to make you smile, and to see your eyes light up when you laugh. You are the most precious part of my life and I never want to lose that spark we share.<br><br>
+        I promise to listen more, love harder, and never take you for granted. You are my favorite hello and my hardest goodbye. I hope this little gesture shows just how much I care.<br><br>
+        Forever yours,<br>
+        ❤️ Your Man
+      </p>
+    </div>
+    <div class="surprise">
+      <h2 style="font-size: 1.3rem; margin-bottom: 1rem;">🎁 A Sweet Surprise</h2>
+      <div class="gallery">
+        <img src="img2.jpg" alt="Italian Trulli">
+        <img src="https://placebear.com/200/200" alt="cute">
+        <img src="img1.jpg" alt="cute">
+      </div>
+    </div>
+  </div>
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 10000);
+    }
+    function showMessage(id) {
+      const messages = document.querySelectorAll('.message-box');
+      messages.forEach(msg => msg.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
